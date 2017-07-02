@@ -1,1 +1,1 @@
-# vuejs-playground
+# Vuejs Playground

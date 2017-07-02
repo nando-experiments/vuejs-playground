@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Welcome to Vue</title>
+  <script src="https://unpkg.com/vue"></script>
+  <style>
+  *, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  html, body {
+    width: 100%;
+    height: 100%;
+  }
+  body {
+    background-color: #f2f3f4;
+    color: #2E4053;
+    font-size: 16px;
+    font-family: Arial, Helvetica, sans-serif;
+    display: table;
+    line-height: 1.45;
+  }
+  #app {
+    width: 100%;
+    text-align: center;
+    display: table-cell;
+    vertical-align: middle;
+  }
+  a {
+    color: #39AF78;
+  }
+  a:hover {
+    text-decoration: none;
+  }
+  h1 {
+    font-size: 3rem;
+    font-weight: lighter;
+    text-transform: uppercase;
+  }
+  </style>
+</head>
+<body>
+  <div id="app">
+    <img src="https://vuejs.org/images/logo.png" alt="Vue logo">
+    <h1>{{ greeting }}</h1>
+    <ul>
+      <li>
+        To learn more about Vue, visit
+        <a :href="docsURL" target="_blank">
+          {{ humanizeURL(docsURL) }}
+        </a>
+      </li>
+      <li>
+        For live help with simple questions, check out
+        <a :href="gitterURL" target="_blank">
+          the Gitter chat
+        </a>
+      </li>
+      <li>
+        For more complex questions, post to
+        <a :href="forumURL" target="_blank">
+          the forum
+        </a>
+      </li>
+    </ul>
+  </div>
+
+  <script>
+    new Vue({
+      el: '#app',
+      data: {
+        greeting: 'Hello Vue.js!',
+        docsURL: 'http://vuejs.org/guide/',
+        gitterURL: 'https://gitter.im/vuejs/vue',
+        forumURL: 'http://forum.vuejs.org/'
+      },
+      methods: {
+        humanizeURL: function (url) {
+          return url
+            .replace(/^https?:\/\//, '')
+            .replace(/\/$/, '')
+        }
+      }
+    })
+  </script>
+</body>
+</html>
